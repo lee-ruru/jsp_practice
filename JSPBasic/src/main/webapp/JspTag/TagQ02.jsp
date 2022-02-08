@@ -7,24 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<p>페이지 누적 요청수</p>
-	<p>매 10번째 방문자에게는 기프티콘을 드립니다.</b></p>
-	<p>당첨 되셨습니다.</p>
-	<h3>랜덤 구구단</h3>
+<%! int total; %>
+<%
+	total++;
+	int num = (int)(Math.random() * 8) + 2;
+%>
+	<p>
+	페이지 누적 요청수 : <%=total  %><br>
+	매 <b>10</b>번쨰 방문자에게는 기프티콘을 드립니다.<br>
+	<%if(total % 10 == 0) { %>
+		당첨 되셨습니다!!
+	<%} %>
+	</p>
+	<hr>
 	
-	<% 
-		for(int i= 1; i < 10; i++){
-			out.println("<h1>" + i + "단<h1/>");	 		
-			for (int j = 1; j < 10; j++){
-				out.println(i + "*" + j + " = " + (i * j) + "<br/>");
-			}
-			out.println("-----------------------<br/>");
-		}
-	%>
-
-
-
-
+	<h2>랜덤 구구단(<%= num %>단)</h2>
+	<p>
+		이번에 나온 구구단은 <%= num %>단 입니다.
+	</p>
+	<p>
+		<% for(int i=1; i<=9; i++) { %>
+			<%= num %> X <%= i %> = <%= num * i %><br>
+			<% out.println(num + " X " + i + " = " + (num * i) + "<br/>"); %>
+		<% } %>
+	</p>
+	
 </body>
 </html>

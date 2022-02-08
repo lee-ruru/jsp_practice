@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<%! List<Integer> lotto = new ArrayList<>();%>
+	<%
+		int getNum = 0;
+		while(lotto.size() != 6) {
+			getNum = (int)(Math.random() * 45) +1;
+			if(!lotto.contains(getNum)) {
+				lotto.add(getNum);	
+			}
+		}
+		Collections.sort(lotto);
+		out.println("추첨된 번호 : " + lotto);
+		
+		// getNum에 저장된 번호가 기존 lotto 리스트에 저장되어있는 리스트라면(반복문)
+		 while(lotto.contains(getNum)) {
+			 //새로운 번호를 다시 getNum에 저장
+			 getNum = (int)(Math.random() * 45) + 1;	 
+		 }
+
+	}%>
+</body>
+</html>
