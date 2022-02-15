@@ -27,8 +27,9 @@ public class JDBCInsert {
 			String uPw = scan.nextLine();
 			System.out.println("추가할 유저의 이름을 입력해주세요.");
 			String uName = scan.nextLine();
-			System.out.println("조회할 유저의 이메일을 입력해주세요.");
+			System.out.println("추가할 유저의 이메일을 입력해주세요.");
 			String uEmail = scan.nextLine();
+			
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/jdbcprac1",//접속url

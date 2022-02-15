@@ -1,12 +1,9 @@
 package kr.co.ict;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.Scanner;
-
 public class JDBCpstmtSelect {
 
 	public static void main(String[] args) {
@@ -33,7 +30,7 @@ public class JDBCpstmtSelect {
 			// ?는 2개이상 쓸 수도 있습니다.
 			String sql = "SELECT * FROM userinfo WHERE uid=?";
 			
-			//	pstmt 변수를 만들어 세팅합니다.
+			//pstmt 변수를 만들어 세팅합니다.
 			PreparedStatement pstmt = con.prepareStatement(sql);
 			//	?에 들어갈 자료를 정의해줍니다.
 			pstmt.setString(1, uId);// 1번째 ? 자리에 uId를 넣어주겠다는 의미

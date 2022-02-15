@@ -9,6 +9,9 @@
 	<section name="ZipFileImportWizard">
 		<item key="WizardZipFileResourceImportPage1.STORE_OVERWRITE_EXISTING_RESOURCES_ID" value="false"/>
 		<list key="WizardZipFileResourceImportPage1.STORE_SOURCE_NAMES_ID">
+			<item value="C:\Users\lee su min\OneDrive\바탕 화면\PDF인재개발\20220210.zip"/>
+			<item value="C:\Users\lee su min\OneDrive\바탕 화면\PDF인재개발\20220209.zip"/>
+			<item value="C:\Users\lee su min\OneDrive\바탕 화면\PDF인재개발\20220210_jsp.zip"/>
 			<item value="C:\Users\lee su min\OneDrive\바탕 화면\PDF인재개발\20220204_jsp.zip"/>
 		</list>
 	</section>
