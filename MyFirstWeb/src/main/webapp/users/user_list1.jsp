@@ -1,10 +1,10 @@
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="java.sql.ResultSet"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
+  <%
     // 전체 유저 목록을 가져오는 코드를 작성해보도록 하겠습니다.
     // 1. DB접속 변수생성
     String dbType = "com.mysql.cj.jdbc.Driver";
