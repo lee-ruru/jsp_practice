@@ -1,7 +1,6 @@
-package kr.co.ict.servelet;
+package kr.co.ict.servlet;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,41 +8,37 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ServletBasic
+ * Servlet implementation class CommandPatternServelt
  */
-// /apple로 접속했을때 해당 서블릿이 실행됨
-@WebServlet("/apple")
-public class ServletBasic extends HttpServlet {
+@WebServlet("*.test")
+public class CommandPatternServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ServletBasic() {
+    public CommandPatternServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see Servlet#init(ServletConfig)
-	 */
-	public void init(ServletConfig config) throws ServletException {
-		System.out.println("/apple 최초 접속");
-	}
-
-	/**
-	 * @see Servlet#destroy()
-	 */
-	public void destroy() {
-		// TODO Auto-generated method stub
-	}
-
-	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("*.test 패턴으로 접속 감지됨");
+		// .test 앞에 들어오는 문자가 뭔지 감지해야 사용자의 요청을 파악할 수 있음.
+		String uri = request.getRequestURI();
+		System.out.println(uri);
+		if(uri.equals("/MyFirstWeb/main.test")) {
+			response.sendRedirect("http://localhost:8181/MyFirstWeb/");
+		}else if(uri.equals("/MyFirstWeb/board.test")) {
+			response.sendRedirect("http://localhost:8181/MyFirstWeb/boardList");
+		}else if(uri.equals("/MyFirstWeb/login.test")) {
+			response.sendRedirect("http://localhost:8181/MyFirstWeb/users/login_form.jsp");
+		}else {
+			response.sendRedirect("http://localhost:8181/MyFirstWeb/");
+		}
 	}
 
 	/**

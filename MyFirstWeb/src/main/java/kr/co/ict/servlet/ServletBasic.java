@@ -1,4 +1,4 @@
-package kr.co.ict.servelet;
+package kr.co.ict.servlet;
 
 import java.io.IOException;
 import javax.servlet.ServletConfig;
@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class OnlyGetServlet
+ * Servlet implementation class ServletBasic
  */
-@WebServlet("/getServlet")
-public class OnlyGetServlet extends HttpServlet {
+// /apple로 접속했을때 해당 서블릿이 실행됨
+@WebServlet("/apple")
+public class ServletBasic extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public OnlyGetServlet() {
+    public ServletBasic() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,21 +28,30 @@ public class OnlyGetServlet extends HttpServlet {
 	 * @see Servlet#init(ServletConfig)
 	 */
 	public void init(ServletConfig config) throws ServletException {
-		System.out.println("/getservlet 최초접속");
+		System.out.println("/apple 최초 접속");
 	}
 
 	/**
 	 * @see Servlet#destroy()
 	 */
 	public void destroy() {
-		System.out.println("/getservlet 접속시 생성된 객체는 서버 종료로 인해 파기됩니다.");
+		// TODO Auto-generated method stub
 	}
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("/getservlet get방식 접속에 성공했습니다.");
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

@@ -1,4 +1,4 @@
-package kr.co.ict.servelet;
+package kr.co.ict.servlet;
 
 import java.io.IOException;
 

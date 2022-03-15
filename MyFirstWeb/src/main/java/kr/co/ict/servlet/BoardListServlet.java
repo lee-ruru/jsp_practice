@@ -1,7 +1,6 @@
-package kr.co.ict.servelet;
+package kr.co.ict.servlet;
 
 import java.io.IOException;
-import java.sql.Date;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -33,16 +32,16 @@ public class BoardListServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//1. 접속시 BoardDAO생성
-		BoardDAO dao = BoardDAO.getInstance();	
-		//2. BoardDAO의 getAllBoardList() 호출해 전체 게시글 정보 받아오기
+		// 1. 접속시 BoardDAO생성
+		BoardDAO dao = BoardDAO.getInstance();
+		// 2. BoardDAO의 getAllBoardList() 호출해 전체 게시글 정보 받아오기
 		List<BoardVO> boardList = dao.getAllBoardList();
-		//3. request.setAttribute로 바인딩하기
-		// List<boardVO> boardList를 바로 바인딩할수도 있습니다.
+		// 3. request.setAttribute로 바인딩하기
+		// List<boardVO> boardList를 바로 바인딩할수도 있습니다. 
 		request.setAttribute("boardList", boardList);
-	
-		//4. /board/boardlist.jsp로 포워딩하기
+		// 4. /board/boardlist.jsp로 포워딩하기
 		// 포워딩 후 el로 바인딩한 자료를 화면에 뿌려보세요.
+		// http://localhost:8181/MyFirstWeb/board/boardlist.jsp
 		RequestDispatcher dp = request.getRequestDispatcher("/board/boardlist.jsp");
 		dp.forward(request, response);
 	}
