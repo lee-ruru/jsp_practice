@@ -5,10 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import kr.co.ict.BoardDAO;
 
-public class BoardUpdateService implements IBoardService {
+public class BoardUpdateService implements IBoardService{
+
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
-		
 		String sbNum = request.getParameter("board_num");
 		String title = request.getParameter("title");
 		String content = request.getParameter("content");
@@ -19,4 +19,5 @@ public class BoardUpdateService implements IBoardService {
 		dao.BoardUpdate(title, content, bNum);
 		
 	}
+
 }

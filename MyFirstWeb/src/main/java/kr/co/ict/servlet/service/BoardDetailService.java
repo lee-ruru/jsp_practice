@@ -6,19 +6,16 @@ import javax.servlet.http.HttpServletResponse;
 import kr.co.ict.BoardDAO;
 import kr.co.ict.BoardVO;
 
-public class BoardDetailService implements IBoardService {
-
+public class BoardDetailService implements IBoardService{
+	
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) {
+		
+	// BoardDetailServlet에서 바인딩까지 복사
 		String sbNum = request.getParameter("board_num");
-		//int bNum = 0;
-		//if(sbNum != null) {
-		//	bNum = Integer.parseInt(sbNum);
-		//}else{
-		//	bNum=1;
-		//}
 		int bNum = Integer.parseInt(sbNum);
 		//System.out.println(bNum);
+		
 		// dao생성
 		BoardDAO dao = BoardDAO.getInstance();
 		// dao에서 해당 글번호에 대한 정보를 가져오고
@@ -28,4 +25,6 @@ public class BoardDetailService implements IBoardService {
 		//데이터 바인딩
 		request.setAttribute("board", board);
 	}
-}
+
+		
+	}

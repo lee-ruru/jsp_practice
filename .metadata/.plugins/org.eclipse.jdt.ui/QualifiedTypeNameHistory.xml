@@ -6,7 +6,6 @@
     <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
     <fullyQualifiedTypeName name="java.sql.ResultSet"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
     <fullyQualifiedTypeName name="kr.co.ict.BoardDAO"/>
     <fullyQualifiedTypeName name="kr.co.ict.BoardVO"/>
     <fullyQualifiedTypeName name="java.util.List"/>
@@ -18,4 +17,8 @@
     <fullyQualifiedTypeName name="kr.co.ict.servlet.service.BoardInsertService"/>
     <fullyQualifiedTypeName name="kr.co.ict.servlet.service.BoardDeleteService"/>
     <fullyQualifiedTypeName name="kr.co.ict.servlet.service.BoardUpdateFormService"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+    <fullyQualifiedTypeName name="kr.co.ict.servlet.service.BoardInsertFormService"/>
+    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
+    <fullyQualifiedTypeName name="javax.servlet.ServletException"/>
 </qualifiedTypeNameHistroy>
